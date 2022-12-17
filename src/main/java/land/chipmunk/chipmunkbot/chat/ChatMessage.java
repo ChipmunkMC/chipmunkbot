@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 @Data
 @AllArgsConstructor
 public class ChatMessage {
-  // * I do not really care about signatures, they were likely made for the sus chat reporting system anyway, but I still include the sender as it really helps with stuff such as commands.
+  // * I do not really care about signatures, they were likely made for the sussy wussy chat reporting system anyway, but I still include the sender as it really helps with stuff such as commands.
   private Component component;
   private UUID sender;
 
