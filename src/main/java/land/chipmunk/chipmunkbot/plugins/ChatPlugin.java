@@ -17,13 +17,6 @@ import java.time.Instant;
 public class ChatPlugin extends Plugin {
   public ChatPlugin (Client client) {
     super(client, "chat");
-
-    /* client.session().addListener(new SessionAdapter () {
-      @Override
-      packetReceived (Session session, Packet packet) {
-        if (packet instanceof Server)
-      }
-    }); */
   }
 
   public void message (String message) {
