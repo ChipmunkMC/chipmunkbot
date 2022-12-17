@@ -7,26 +7,16 @@ import com.github.steveice10.packetlib.Session;
 import com.github.steveice10.packetlib.tcp.TcpClientSession;
 import lombok.Data;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class ClientOptions {
   private String host;
   private int port;
   private MinecraftProtocol protocol;
   private ProxyInfo proxy;
-
-  public ClientOptions () { // So it can easily be used as a builder
-  }
-
-  public String host () {
-    return host;
-  }
-
-  public ClientOptions host (String value) {
-    host = value;
-    return this;
-  }
 
   /* public ClientOptions profile (GameProfile profile) {
     protocol(new MinecraftProtocol(profile));
