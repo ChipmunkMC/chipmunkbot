@@ -16,9 +16,9 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
-import land.chipmunk.chipmunkbot.plugins.ChatPlugin;
-
 import com.google.gson.Gson;
+
+import land.chipmunk.chipmunkbot.plugins.ChatPlugin;
 import land.chipmunk.chipmunkbot.plugins.PlayerListPlugin;
 
 public class Main {
@@ -52,6 +52,7 @@ public class Main {
     for (JsonElement element : config.get("bots").getAsJsonArray()) {
       ClientOptions options = parseClientOptions(element.getAsJsonObject());
       Client client = new Client(options); // TODO: Maybe create a list of some sort
+      client.loadPlugin(ChatPlugin.class);
       client.loadPlugin(PlayerListPlugin.class);
     }
   }
