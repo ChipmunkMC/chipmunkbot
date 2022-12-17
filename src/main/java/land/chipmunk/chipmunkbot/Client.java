@@ -9,9 +9,10 @@ import java.util.Map;
 import java.util.HashMap;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import lombok.Getter;
 
 public class Client {
-  private Session session;
+  @Getter private final Session session;
   private Map<String, Plugin> plugins = new HashMap();
 
   public Client (ClientOptions options) {
@@ -19,10 +20,6 @@ public class Client {
     this.session = session;
 
     session.connect();
-  }
-
-  public Session session () {
-    return session;
   }
 
   public Plugin getPlugin (String id) { return plugins.get(id); }
