@@ -69,7 +69,6 @@ public class PlayerListPlugin extends Plugin {
     if (duplicate != null) list.remove(duplicate);
 
     list.add(new MutablePlayerListEntry(newEntry));
-    System.out.println("Added " + newEntry.getProfile().getName() + " to the player list.");
   }
 
   private void updateGamemode (PlayerListEntry newEntry) {
