@@ -17,6 +17,12 @@
         <id>opencollab</id>
         <url>https://repo.opencollab.dev/maven-releases/</url>
     </repository>
+
+    <repository>
+      <id>minecraft-libraries</id>
+      <name>Minecraft Libraries</name>
+      <url>https://libraries.minecraft.net</url>
+    </repository>
   </repositories>
 
   <dependencies>
@@ -37,6 +43,12 @@
       <artifactId>lombok</artifactId>
       <version>1.18.24</version>
       <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.mojang</groupId>
+      <artifactId>brigadier</artifactId>
+      <version>1.0.18</version>
     </dependency>
   </dependencies>
 
@@ -71,5 +83,4 @@
       </plugin>
     </plugins>
   </build>
-
 </project>

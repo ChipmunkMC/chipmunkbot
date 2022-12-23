@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 
 import land.chipmunk.chipmunkbot.plugins.ChatPlugin;
 import land.chipmunk.chipmunkbot.plugins.PlayerListPlugin;
+import land.chipmunk.chipmunkbot.plugins.CommandManagerPlugin;
 
 public class Main {
   private static File CONFIG_FILE = new File("config.json");
@@ -54,6 +55,7 @@ public class Main {
       Client client = new Client(options); // TODO: Maybe create a list of some sort
       client.loadPlugin(ChatPlugin.class);
       client.loadPlugin(PlayerListPlugin.class);
+      client.loadPlugin(CommandManagerPlugin.class);
     }
   }
 }

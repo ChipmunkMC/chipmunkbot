@@ -1,11 +1,8 @@
 package land.chipmunk.chipmunkbot;
 
-public class Plugin {
-  public String id;
-  public Client client;
+import com.google.gson.JsonObject;
 
-  public Plugin (Client client, String id) {
-    this.client = client;
-    this.id = id;
-  }
+public interface Plugin {
+  String id ();
+  void inject (Client client, JsonObject options);
 }

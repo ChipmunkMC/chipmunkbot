@@ -26,16 +26,21 @@ public class Client {
 
   public void loadPlugin (Class<? extends Plugin> pluginClass) {
     try {
-      Constructor<? extends Plugin> constructor = pluginClass.getConstructor(Client.class);
-      Plugin plugin = constructor.newInstance(this);
-      plugins.put(plugin.id, plugin);
+      Plugin plugin = pluginClass.newInstance();
+      plugin.inject(this, null);
+      plugins.put(plugin.id(), plugin);
+      System.out.println("loaded " + plugin.id());
     } catch (Exception ignored) {
     }
   }
 
   // TODO: Maybe also add unloading?
 
-  public void inject (Injector injector) {
-    injector.inject(this);
+  public void inject (Class<? extends Injector> injectorClass) {
+    try {
+      Injector injector = injectorClass.newInstance();
+      injector.inject(this);
+    } catch (Exception ignored) {
+    }
   }
 }

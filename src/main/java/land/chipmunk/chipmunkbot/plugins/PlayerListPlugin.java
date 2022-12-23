@@ -9,16 +9,21 @@ import com.github.steveice10.packetlib.event.session.SessionAdapter;
 import com.github.steveice10.mc.protocol.data.game.PlayerListEntry;
 import com.github.steveice10.mc.protocol.data.game.PlayerListEntryAction;
 import land.chipmunk.chipmunkbot.data.MutablePlayerListEntry;
+import com.google.gson.JsonObject;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class PlayerListPlugin extends Plugin {
+public class PlayerListPlugin implements Plugin {
+  private Client client;
   public List<MutablePlayerListEntry> list = new ArrayList<MutablePlayerListEntry>();
 
-  public PlayerListPlugin (Client client) {
-    super(client, "player_list");
+  @Override public String id () { return "player_list"; }
+
+  @Override
+  public void inject (Client client, JsonObject options) {
+    this.client = client;
 
     client.session().addListener(new SessionAdapter() {
       @Override
