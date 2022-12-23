@@ -29,7 +29,6 @@ public class Client {
       Plugin plugin = pluginClass.newInstance();
       plugin.inject(this, null);
       plugins.put(plugin.id(), plugin);
-      System.out.println("loaded " + plugin.id());
     } catch (Exception ignored) {
     }
   }
